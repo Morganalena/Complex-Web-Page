@@ -1,4 +1,4 @@
-# Complex Web Page - Final Project
+# Complex Web Page - Final Engeto Project
 
 This project is a one-page website which meets the following requirements:
 
