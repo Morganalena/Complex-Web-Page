@@ -1,0 +1,628 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    --primary-color: rgb(39, 76, 55); 
+    --secondary-color: rgb(245, 245, 245); 
+    --header-color: rgb(10, 29, 18); 
+    --dark-bg: rgb(39, 76, 55);
+    --text-color-light: rgb(31, 59, 43);
+    --text-color-dark: rgb(245, 245, 220);
+    --highlight-color: rgba(60, 163, 105, 0.927);
+    --DM-light-color: rgb(226, 226, 226);
+    --font-primary: 'Inter', sans-serif;
+}
+input{
+    display: block;
+    width: 100%;
+    font: inherit;
+}
+
+body {
+    font-family: var(--font-primary);
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #ffffff, rgba(124, 124, 124, 0.228)); 
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    color: var(--header-color);
+}
+
+/* Header and Background */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1; 
+}
+
+.header-title-container {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+    width: 100%; 
+    max-width: 90%;
+    padding: 10px 10px;
+    font-size: 2.9rem;
+    margin: 300px auto 0 auto;
+    letter-spacing: 0.2rem;
+    backdrop-filter: blur(1px);
+    animation: fadeIn 1.2s ease-in-out forwards;
+    text-shadow: 1px 1px 1px var(--primary-color);
+}
+
+.header-title-container h3 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-top: 5px;
+    width: 100%;
+}
+
+.background-img, .background-img-dark-mode {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 95vh;
+    object-fit: cover;
+    opacity: 0.6;
+    z-index: -1; 
+}
+.background-img {
+    display: block;
+}
+
+.background-img-dark-mode {
+    display: none; 
+}
+
+/* Navigation Tabs */
+.nav-tabs-container {
+    display: flex !important; 
+    flex-direction: row; 
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    animation: fadeIn 1.2s ease-in-out forwards;
+    background: var(--secondary-color);
+}
+.nav-tabs-container.sticky {
+    position: fixed !important;
+    top: 0 !important;
+    bottom: auto;
+}
+.nav-menu-btn {
+    display: none;
+    
+}
+.nav-close-btn {
+    display: none;
+}
+
+.nav-links {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.nav-tab {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; 
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--text-color-light);
+    background: var(--secondary-color);
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+}
+
+.nav-tab:hover {
+    background: var(--dark-bg);
+    color: var(--secondary-color);
+}
+
+.nav-tab.active {
+    background: var(--dark-bg); 
+    color: var(--secondary-color);
+}
+
+.tabs-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    margin-left: 150px; 
+    margin-right: 150px; 
+}
+
+.tabs-slide h1 {
+    font-size: 2.1rem;
+    margin: 0;
+    letter-spacing: 0.5rem;
+}
+
+.tabs-slide h3 {
+    font-size: 1.5rem;
+    letter-spacing: 0.2rem;
+    opacity: 0.6;
+}
+
+
+
+/* Adjust Buttons in Dark Mode */
+.theme-toggle {
+    position: absolute !important;
+    top: 20px;
+    right: 20px;
+    width: 80px;
+    height: 40px;
+    background: rgba(39, 76, 55, 0.808); 
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#toggleSwitch {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+#toggleBall {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: white;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: left 0.3s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+#toggleBall i {
+    font-size: 18px;
+    color:  var(--font-primary);
+    transition: opacity 0.3s ease-in-out;
+}
+/* Plant Kingdom */
+.plant-kingdom-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 15px;
+    justify-items: center;
+    padding: 20px;
+    width: 750px;
+}
+
+.plants-box {
+    color: inherit;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.plants-box img {
+    width: 240px; 
+    height: 170px; 
+    object-fit: cover; 
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.plants-box:hover {
+    transform: scale(1.05);
+}
+.plants-box:hover img {
+    box-shadow: 0px 4px 10px rgba(0.2, 0.2, 0.2, 0.2);
+}
+.plants-box p {
+    font-size: 1.2rem; 
+    font-weight: 600; 
+    color: var( rgb(39, 76, 55)); 
+    margin-top: 10px; 
+    letter-spacing: 0.5px; 
+}
+.plants-box:hover p {
+    color: #276c50;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Registration Form */
+#registrationForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(100, 111, 105, 0.385);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+#registrationForm input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box; 
+}
+
+.password-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.password-container input {
+    width: 100%;
+    padding: 10px;
+    padding-right: 40px; 
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #777;
+    transition: color 0.3s ease-in-out;
+}
+
+.toggle-password:hover {
+    color: var(--highlight-color);
+}
+
+#registrationForm button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+#registrationForm button:hover {
+    background: var(--highlight-color);
+}
+
+
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin: 5px 0;
+    display: none;
+}
+
+.info-message {
+    color: #666;
+    font-size: 0.85rem;
+    margin: 5px 0;
+}
+
+#registrationForm button {
+    width: 100%;
+    padding: 10px;
+    background:var(--highlight-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+#registrationForm button:hover {
+    background: rgba(110, 188, 144, 0.808);
+}
+
+/*  Herbs and Uses  */
+.plants-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 15px;
+    justify-items: center;
+    padding: 20px;
+    width: 750px;
+}
+
+.flip-card {
+    width: 200px;
+    height: 220px;
+    perspective: 1000px; 
+}
+
+.flip-card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0.2, 0.2, 0.2, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box; 
+    backface-visibility: hidden;
+}
+.flip-card-back {
+    background: var(--secondary-color);
+    color: rgb(0, 0, 0);
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    padding: 10px 10px;
+}
+
+.flip-card-front {
+    background: rgb(255, 255, 255);
+    color: var(--primary-color);
+    font-size: 1.2em;
+    z-index: 2; 
+}
+
+.flip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+
+/* Learn More Button */
+.learn-more {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 8px 20px;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+.learn-more:hover {
+    background: var(--highlight-color);
+}
+
+
+/* Scroll-to-Top Button */
+#scrollToTop {
+    position: fixed;
+    bottom: 25px;
+    right: 35px;
+    width: 50px;
+    height: 50px;
+    background:var(--secondary-color); 
+    color: var(--dark-bg);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0.3, 0.3, 0.3, 0.3);
+}
+#scrollToTop.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+#scrollToTop.hide {
+    opacity: 0;
+    transform: translateY(20px);
+}
+#scrollToTop:hover {
+    background: var(--text-color-dark);
+    transform: scale(1.1);
+}
+
+
+/* Footer*/
+.footer {
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    margin-top: 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+.footer-social a {
+    color: white;
+    font-size: 1.6rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-social a:hover {
+    color: var(--text-color-dark);
+    transform: scale(1.1);
+}
+
+/* Copyright Text */
+.footer-text {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+
+/* DARK MODE SETTING */
+
+
+body.dark-mode h1 {
+    color: var(--DM-light-color);
+}
+body.dark-mode {
+    background:rgba(0, 0, 0, 0.886);
+    color: #d4d4d4;
+}
+body.dark-mode .background-img {
+    display: none;
+}
+body.dark-mode .background-img-dark-mode {
+    display: block;
+}
+body.dark-mode .header-title-container {
+    color: var(--DM-light-color); 
+    text-shadow: 2px 2px 10px rgba(164, 164, 164, 0.63); 
+}
+
+body.dark-mode .nav-menu-btn {
+    color: var(--DM-light-color); 
+}
+body.dark-mode .nav-close-btn {
+    color: var(--DM-light-color); 
+}
+
+body.dark-mode .nav-tab {
+    color: var(--DM-light-color); 
+    background: var(--primary-color);
+}
+
+body.dark-mode .nav-tabs-container {
+    background-color: var(--primary-color); 
+}
+
+body.dark-mode .nav-tab:hover {
+    background: var(--DM-light-color);
+    color:  rgba(39, 76, 55, 0.845);
+}
+
+body.dark-mode .nav-tab.active {
+    background: var(--DM-light-color);
+    color:  rgba(39, 76, 55, 0.845);
+}
+
+
+body.dark-mode #sunIcon {
+    display: inline-block; 
+}
+
+body.dark-mode #moonIcon {
+    display: none; 
+}
+
+
+body.dark-mode #toggleBall {
+    left: 45px; 
+}
+
+body.dark-mode .theme-toggle {
+    background: rgba(134, 175, 151, 0.95); 
+
+}
+
+body.dark-mode #toggleBall {
+    background: rgba(39, 76, 55, 0.845); 
+}
+
+body.dark-mode #toggleBall i {
+    color: var(--DM-light-color); 
+}
+
+body.dark-mode .plants-box p {
+    color: var(--DM-light-color); 
+}
+
+body.dark-mode .plants-box:hover p {
+    color: rgba(127, 217, 166, 0.971); 
+}
+
+body.dark-mode .flip-card-front {
+    background: var(--DM-light-color);
+    color: var(--primary-color);
+    font-size: 1.2em;
+    z-index: 2; 
+}
+body.dark-mode .flip-card-back {
+    background: var(--DM-light-color);
+    color: rgb(0, 0, 0);
+    transform: rotateY(180deg);
+    text-align: center;
+    padding: 10px;
+}
+
+

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Alena Morgan -->
+<!-- Alena.karnosova@gmail.com -->
+<!-- morganalena -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="query-style.css">
+    <script src="https://kit.fontawesome.com/8adeccc593.js" crossorigin="anonymous"></script>
+    <title>The Botanist’s Guide</title>
+</head>
+<body class="light-theme">
+    <header class="header"> 
+            <div class="header-bg">
+                <img src="./img/jagoda-kondratiuk-bWLI5XN3Jhc-unsplash.jpg" alt="Background" class="background-img">
+                <img src="./img/josefin-WS5yjFjycNY-unsplash.jpg" alt="Background" class="background-img-dark-mode">
+                
+                <div class="welcome-container">
+                    <p id="welcomeMessage" style="display: none;"></p>
+                    <button id="logoutBtn" style="display: none;">Logout</button>
+                </div>
+
+                <div class="nav-btn-group-desktop">
+                    <div class="theme-toggle">
+                        <button id="toggleSwitch">
+                            <span id="toggleBall">
+                                <i id="moonIcon" class="fa-regular fa-moon"></i>
+                                <i id="sunIcon" class="fa-solid fa-sun"></i>
+                            </span>
+                        </button>
+                    </div>
+
+                </div>
+                       
+
+                <div class="header-title-container">
+                    <h1>The Botanist’s Guide</h1>
+                    <h3>Exploring the World of Plants</h3>
+                </div>
+            </div>
+
+            <!-- Navigation Bar -->
+            <nav class="nav-tabs-container">
+
+                <button class="nav-menu-btn" id="menuToggle">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div class="nav-links" id="navLinks">
+                    <a class="nav-tab" href="#plants">Plant Kingdom</a>
+                    <a class="nav-tab" href="#registration">Join Us</a>
+                    <a class="nav-tab" href="#herbs">Herbs & Uses</a>
+                </div>
+                
+                <button class="nav-close-btn" id="closeMenu" style="display: none;">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                </button>
+            </nav>
+
+            <span class="nav-tabs-slider"></span>
+            </div>
+    </header>
+
+    <!-- Plant Kingdom-->
+    <main>
+        <section class="tabs-slide" id="plants">
+            <h1>Plant Kingdom</h1>
+            <h3>Discover the Diversity of Flora</h3>
+            <div class="plant-kingdom-grid">
+                <a href="rainforest.html" class="plants-box">
+                    <img src="./img/chris-abney-qLW70Aoo8BE-unsplash.jpg" alt="Rainforest Plants">
+                    <p>Rainforest Plants</p>
+                </a>
+                <a href="desert.html" class="plants-box">
+                    <img src="./img/khara-woods-u457qCut4mw-unsplash.jpg" alt="Desert Flora">
+                    <p>Desert Flora</p>
+                </a>
+                <a href="medicinal.html" class="plants-box">
+                    <img src="./img/syed-habib-m-Dcc9OIePxVw-unsplash.jpg" alt="Medicinal Plants">
+                    <p>Medicinal Plants</p>
+                </a>
+                <a href="medicinal.html" class="plants-box">
+                    <img src="./img/theotim-thoron-e8nIow5TQSY-unsplash.jpg" alt="Carnivous Plants">
+                    <p>Carnivous Plants</p>
+                </a>
+                <a href="medicinal.html" class="plants-box">
+                    <img src="./img/lars-dunker-Uerq2BjOqSQ-unsplash.jpg" alt="Ferns & Mosses">
+                    <p>Ferns & Mosses</p>
+                </a>
+                <a href="medicinal.html" class="plants-box">
+                    <img src="./img/slawek-mRa_YxLIXts-unsplash.jpg" alt="Aquatic Flora">
+                    <p>Aquatic Flora</p>
+                </a>
+            </div>
+        </section>
+    
+        <!-- Registration Form-->
+        <section class="tabs-slide" id="registration">
+            <h1>Create an Account</h1>
+            <h3>Sign up to Access More Features</h3>
+
+            <form id="registrationForm">
+                
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required autocomplete="username">
+                
+                <label for="password">Password:</label>
+                <div class="password-container">
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required autocomplete="new-password">
+                    <i class="fa-solid fa-eye toggle-password" data-target="password"></i>
+                </div>
+                
+                <label for="confirmPassword">Confirm Password:</label>
+                <div class="password-container">
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter your password" required autocomplete="new-password">
+                    <i class="fa-solid fa-eye toggle-password" data-target="confirmPassword"></i>
+                </div>
+
+                <p id="passwordStrength" class="info-message"></p>
+                <p id="passwordError" class="error-message"></p>
+
+                <button type="submit">Register</button>
+            </form>
+        </section>
+        
+
+        <!-- Herbs & Uses-->
+        <section class="tabs-slide" id="herbs">
+            <h1>Herbs & Uses</h1>
+            <h3>Discover the Power of Natural Remedies</h3>
+        
+            <div class="plants-grid">
+                <!-- Basil -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./img/yakov-leonov-0wWYos3ZGqU-unsplash.jpg" alt="Basil">
+                            <h4>Basil</h4>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Used in cooking for its fresh flavor, it also has antibacterial properties and can aid digestion.</p>
+                            <a href="basil.html" class="learn-more">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Lavender -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./img/baraa-jalahej-qfZGhapxoa4-unsplash.jpg" alt="Lavender">
+                            <h4>Lavender</h4>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Known for its calming scent, it is used in aromatherapy and can help with sleep and anxiety.</p>
+                            <a href="lavender.html" class="learn-more">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Mint -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./img/victor-serban-whTrv7kvGJY-unsplash.jpg" alt="Mint">
+                            <h4>Mint</h4>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Commonly used to aid digestion, relieve headaches, and provide a refreshing flavor in drinks.</p>
+                            <a href="mint.html" class="learn-more">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Rosemary -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./img/ian-yates-C4qF96OqM4w-unsplash.jpg" alt="Rosemary">
+                            <h4>Rosemary</h4>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Boosts memory, supports circulation, and has strong antioxidant properties.</p>
+                            <a href="rosemary.html" class="learn-more">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Chamomile -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./img/natalia-slastnikova-zJ25b1zonsA-unsplash.jpg" alt="Chamomile">
+                            <h4>Chamomile</h4>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Known for its relaxing properties, it is often used in tea to aid sleep and digestion.</p>
+                            <a href="chamomile.html" class="learn-more">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Thyme -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./img/ian-yates-z6VJQR6-4SU-unsplash.jpg" alt="Thyme">
+                            <h4>Thyme</h4>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Contains powerful antiseptic properties and is used to support respiratory health.</p>
+                            <a href="thyme.html" class="learn-more">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Scroll-to-Top Button -->
+        <button id="scrollToTop">
+            <i class="fa-solid fa-arrow-up"></i>
+        </button>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-social">
+                    <a href="https://facebook.com" ><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://twitter.com" ><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://instagram.com" ><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://linkedin.com" ><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <p class="footer-text">© 2024 The Botanist’s Guide. All Rights Reserved.</p>
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>   
+</body>
+</html>

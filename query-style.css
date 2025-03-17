@@ -1,0 +1,260 @@
+@media (max-width: 1120px) {
+    .header-title-container {
+        font-size: 2.5rem;
+        padding: 15px 20px 15px 5px;
+        margin: 250px auto 0 auto;
+    }
+    }
+@media (max-width: 768px) {
+    .header-title-container {
+        font-size: 2.1rem;
+        margin: 200px auto 0 auto;
+    }
+    .header-title-container h3 {
+        font-size: 2rem;
+        width: 100%;
+    }
+    .nav-close-btn {
+        display: none;
+    }
+    .nav-tab {
+        font-size: 1.4rem; 
+        height: 100%;  
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+
+    .tabs-slide {
+        margin-top: 10%;
+        margin-bottom: 10%;
+        margin-left: 5%; 
+        margin-right: 5%; 
+    }
+    .tabs-slide h1 {
+        font-size: 2.3rem;
+    }
+    .tabs-slide h3 {
+        font-size: 1.3rem;
+    }
+    
+    .plant-kingdom-grid,.plants-grid {
+        grid-template-columns: repeat(2, 1fr); 
+        width: 95%; 
+        max-width: 700px; 
+        justify-content: center; 
+        align-items: stretch;
+        gap: 5px;
+        padding: 10px;
+    }
+    .plants-box {
+        width: 100%;
+        height: 200px; 
+
+    }  
+    .plants-box img {
+        width: 80%; 
+        height: 80%; 
+        object-fit: cover;
+
+    }
+
+    .flip-card {
+        width: 100%;
+        height: 200px;
+        padding-bottom: 5%;
+    }
+
+    .flip-card-front img {
+        width: 100%; 
+        height: 70%; 
+        object-fit: cover;
+    }
+
+    #registrationForm {
+        width: 95%;
+        max-width: 350px;
+    }
+
+    #registrationForm input {
+        font-size: 0.9rem;
+    }
+    .toggle-password {
+        font-size: 0.8rem;
+    }
+
+    #scrollToTop {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        bottom: 15px;
+        right: 30px;
+    }
+}
+@media (max-width: 460px) {
+    .header-title-container {
+        font-size: 1.6rem;
+        margin: 200px auto 0 auto;
+    }
+    .header-title-container h3 {
+        font-size: 1.4rem;
+    }
+
+    .nav-menu-btn {
+        display: block;
+        position: fixed;
+        top: 7.5px;
+        left: 15px;
+        background: none;
+        border: none;
+        font-size: 2.2rem;
+        color: var(--text-color-light);
+        cursor: pointer;
+        z-index: 101;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .nav-close-btn {
+        display: block;
+        font-size: 2rem;
+        background: none;
+        border: none;
+        position: absolute;
+        color: var(--text-color-light);
+        top: 7.5px;
+        right: 15px;
+        cursor: pointer;
+    }
+    .nav-menu-btn.scrolled {
+        top: 0px; 
+    }
+
+    .nav-tabs-container {
+        position: fixed;
+        bottom: 0px;
+        width: 100%;
+        height: 50.5px;
+        background: var(--secondary-color);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: top 0.3s ease-in-out;
+    }
+    .nav-tabs-container.moving-up {
+        transform: translateY(0);
+    }
+
+    .nav-tabs-container.scrolled {
+        position: fixed;
+        top: 0;
+        bottom: auto;
+        transform: translateY(0);
+    }
+
+    .nav-tabs-container.scrolled-to-top {
+        transform: translateY(-100%);
+        top: 0;
+        bottom: auto;
+    }
+    .nav-tabs-container.menu-open {
+        position: fixed;
+        top: 0;
+        bottom: auto;
+        transform: translateY(0);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    .nav-tabs-container.back-to-bottom {
+        bottom: 0;
+        top: auto;
+        transform: translateY(100%);
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 49px;
+        left: 0;
+        width: 100%;
+        background: var(--secondary-color);
+        z-index: 100;
+        
+    }
+    .nav-links.show {
+        display: flex;
+        opacity: 1;
+
+    }
+    .nav-links a {
+        padding: 10px 0;
+        font-size: 1.4rem;
+        text-align: center;
+        display:  block;
+        margin-top: -0.5px;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .tabs-slide {
+        margin-left: 2%; 
+        margin-right: 2%; 
+    } 
+
+
+    .tabs-slide h1 {
+        font-size: 1.5rem; 
+    }
+    .tabs-slide h3 {
+        font-size: 1.0rem;
+    }
+    .plant-kingdom-grid, .plants-grid { 
+        grid-template-columns: repeat(1, 1fr) !important; 
+        width: 65%; 
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .plants-box p {
+        font-size: 1.1rem; 
+    }
+    #registrationForm {
+        width: 70%;
+        max-width: 350px;
+    }
+    #registrationForm input {
+        font-size: 0.8rem;
+        box-sizing: border-box; 
+    }
+    .toggle-password {
+        font-size: 0.7rem;
+    }
+    .plants-box {
+        height: auto;
+    }
+    .plants-box img {
+        width: 100%;
+        height: 100%; 
+        object-fit: cover; 
+    }
+
+    .flip-card {
+        width: 150px; 
+        height: 190px;
+        padding-bottom: 0;
+    }
+    .flip-card-front img {
+        height: 90%;
+    }
+    .flip-card-front {
+        font-size: 1.1em;; 
+    }
+
+    #scrollToTop {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+        bottom: 10px;
+        right: 10px;
+    }
+}
